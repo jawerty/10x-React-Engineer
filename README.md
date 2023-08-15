@@ -12,7 +12,13 @@ Then there's a `dev loop` that will first resolve missing dependencies it missed
 	- Dependency fixer
 	- Code modification feedback
 
-After each loop it will write the code in the 
+The AI asks your initial prompt and requests modifications in a feedback loop
+![Screen Shot 2023-08-15 at 2 22 06 AM](https://github.com/jawerty/10x-React-Engineer/assets/1999719/93e42a6b-953e-44d1-baff-1d219cb98bea)
+
+Example generated output
+![Screen Shot 2023-08-15 at 2 26 35 AM](https://github.com/jawerty/10x-React-Engineer/assets/1999719/3629b96e-8be6-48c2-a650-99742eb7400e)
+
+After each loop it will write the code in the `react-output` directory
 
 The User ask summarization will eventually be optional as I keep working on the features. I found it to be more so how things work in the real world.
 
