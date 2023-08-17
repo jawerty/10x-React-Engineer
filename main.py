@@ -41,9 +41,9 @@ Please note that the code should be fully functional. No placeholders.
 This will be a react.js project so you must create a webpack.config.js at the root of the project that uses "index.js" as the entry file
 The output in the webpack.config.js must point to a bundle.js file that's in the same folder as the index.html
 Place all of the public assets in a folder named "public" in lowercase with an index.html file that is linked to the bundle specified in the webpack.config.js
-You must include a package.json file in the root of the folder that resolves all the required dependencies for this react.js project. All of the dependencies should be set to a * for the most up to date version.
+You must include a package.json file in the root of the folder that resolves all the required dependencies for this react.js project. All of the dependencies and devDependencies must be set to a "*" value. Also, for every package.json you must at least include the packages @babel/core, babel-loader, react and react-dom
 The package.json must be valid JSON
-
+You must include a .babelrc file in the root folder that has @babel/preset-react set
 
 Follow a language and framework appropriate best practice file naming convention.
 Make sure that files contain all imports. Make sure that the code in different files are compatible with each other.
