@@ -24,10 +24,23 @@ After each loop it will write the code in the `react-output` directory
 The User ask summarization will eventually be optional as I keep working on the features. I found it to be more so how things work in the real world.
 
 # How to use it
-So far I have the main.py and a jupiter notebook with all the code accessible in the end it outputs into a `react-output` folder
+### Build/Run from source
+First install the pip packages
+```
+$ pip3 install -r requirements.txt
+```
+
+Then execute the run script
+```
+$ python3 run.py
+```
+
+### Jupyter notebook 
+a jupyter notebook with all the code accessible in the end it outputs into a `react-output` folder
 
 This next upcoming week I will revamp the codebase into more than a single file and add more features. I want to keep iterating on this until it's working well enough to generate React projects locally on a finetuned 7b llama 2 model.
 
+### Google Colab (best option)
 Here's a Google [Colab](https://colab.research.google.com/drive/1b8zZo0O87plL2icYKs6uxXRHlqqe0Mx_?usp=sharing) with the code for you to play with
 
 # This is an experiment
