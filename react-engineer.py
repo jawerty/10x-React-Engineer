@@ -146,6 +146,8 @@ def get_dependency_prompt(codebase):
 def get_modification_prompt(code_block, modification_ask):
   return ModificationPrompt + "CODE:"+code_block+"\nMODIFICATION: "+modification_ask+"  [/INST]"
 
+# this function generates text using the Llama 2 model based on the given prompt
+# returns the generated text
 def generate(prompt):
   sequences = pipeline(
       prompt,
@@ -157,6 +159,8 @@ def generate(prompt):
   )
   return sequences[0]['generated_text']
 
+# this function parses the summarization result from the output string
+# returns the summarized text
 def parse_summarization_result(output):
   label_token = 'Label:'
   output_lines = output.split("\n")
@@ -164,6 +168,8 @@ def parse_summarization_result(output):
     if label_token in output_lines[i]:
       return output_lines[i][len(label_token):].strip()
 
+# this function parses the scaffolding result from the output string
+# returns a list of dictionaries containing the file name and code block for each file
 def parse_scaffolding_result(output):
   output = output[output.index("[/INST]"):]
   code_blocks = re.findall(r"```(.*?)```", output, re.DOTALL)
@@ -183,6 +189,8 @@ def parse_scaffolding_result(output):
 
   return code_files
 
+# this function takes a list of code files and a modification prompt and generates a new code block for each file using the prompt
+# returns a list of dictionaries containing the file name and code block for each file
 def initiate_code_modification(code_files, modification_ask):
   new_code_files = []
   for file_code_pair in code_files:
@@ -196,7 +204,8 @@ def initiate_code_modification(code_files, modification_ask):
     new_code_files.append(file_code_pair)
   return new_code_files
 
-
+# this function takes a list of code files and generates a new package.json file if any dependencies are missing
+# returns the new package.json file as a string
 def resolve_missing_dependencies(code_files):
   print("Resolving missing dependencies...")
   codebase = "\n".join(
@@ -212,6 +221,7 @@ def resolve_missing_dependencies(code_files):
   else:
     return None
 
+# this function takes a list of code files and a modification prompt and generates a new code block for each file using the prompt
 def dev_loop(code_files, user_ask, modification_ask=None):
   if modification_ask:
     # update each related code block with a prediction using the modification ask of the user
