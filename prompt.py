@@ -52,7 +52,9 @@ class Prompt:
 
       Structure your label like this
 
-      Label: enter the label here
+      Label: write the label text here
+
+      Respond only with the output in the exact format specified in the system prompt, with no explanation or conversation.
     """
 
     self.DependenciesPrompt = """
