@@ -1,6 +1,8 @@
 # 10x-React-Engineer
 Coding was livestreamed here -> https://youtube.com/live/6_sdnYDmUmo
 
+Update: The prompts work well with Code Llama. Tested output using [The Bloke's Code LLama Instruct](https://huggingface.co/TheBloke/CodeLlama-13B-Instruct-fp16)
+
 # How it works
 10x-React-Engineer first uses the [GPT-Engineer](https://github.com/AntonOsika/gpt-engineer) method of taking in the users input and scaffolding the project first starting at the entry point and resolving all the imports recursively (through the prompting).
 
